@@ -1,36 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
+import "./App.css"
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Route, Link} from 'react-router-dom'
-import CreateTasker from "./components/Create.component";
-import Taskerr from "./components/Taskerr.component";
-import EditTaskerr from "./components/Edit.Component";
+import Form from "./components/Form.component";
+import TaskList from "./components/Task.component";
+
+
 
 
 function App() {
+  const [inputText, setInputText] = useState("");
+  const [tasks, setTasks] = useState([]);
   return (
-    <Router>
-    <div className="container">
-
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <Link to="/" className="navbar-brand">Taskerr app!</Link>
-        <div className="collapse nav-collapse">
-          <ul className="navbar-nav mr-auto">
-            <li className="navbar-item">
-              <Link to="/" className="nav-link">Home</Link>
-            </li>
-            <li className="navbar-item">
-              <Link to="/create" className="nav-link">Create Tasks</Link>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      
-      <Route path="/" exact component={Taskerr} />
-      <Route path="/edit/:id" component={EditTaskerr} />
-      <Route path="/create" component={CreateTasker} />
-    </div>
-
-    </Router>
+<div className="App">
+  <header>
+    
+    <h1> Taskerr! </h1>
+  </header>
+  <Form 
+  tasks={tasks} 
+  setTasks={setTasks} 
+  setInputText={setInputText} 
+  inputText={inputText}
+  />
+  <TaskList tasks={tasks} />
+</div>
   );
 }
 
