@@ -1,5 +1,5 @@
 import React from "react";
-
+//I think the issue is here
             const Form = ({ setInputText, tasks, setTasks, inputText }) => {
                 const inputTextHandler = (e) => {
                     //event handler
