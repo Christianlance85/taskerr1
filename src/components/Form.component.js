@@ -1,5 +1,4 @@
 import React from "react";
-
 // I believe the issue as to why it is not appearing on the list is on this page
 
             const Form = ({ setInputText, tasks, setTasks, inputText }) => {
